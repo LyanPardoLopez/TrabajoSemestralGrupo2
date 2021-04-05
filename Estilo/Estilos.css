@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+h2{
+    text-align: center;
+}
+section{
+    height: 700px;
+}
+.tatuadores{
+
+}
+.tatuadores img{
+    width: 300px;
+    height: 400px;
+}
+.contenedorImg1{
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+}
+.contenedorImg1 img{
+    width: 250px;
+    height: 210px;
+    padding: 10px;
+}
