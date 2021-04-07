@@ -5,14 +5,25 @@ h2{
     text-align: center;
 }
 section{
-    height: 700px;
+    height: 100%;
 }
 .tatuadores{
-
+    width: 90%;
+    height: 100%;
+    padding: 10%;
+    align-content: center;
 }
 .tatuadores img{
     width: 300px;
     height: 400px;
+}
+.tatuadores td{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.tatuadores p{
+    font-size: 23px;
 }
 .contenedorImg1{
     width: 90%;
@@ -24,4 +35,38 @@ section{
     width: 250px;
     height: 210px;
     padding: 10px;
+}
+.contenedorImg1 td{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.contenedor p,iframe{
+    padding-top: 30px;
+} 
+.contenedor p{
+    font-size: 25px;
+}
+
+.separador{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+}
+.cotizacion{
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+}
+p, h5, a, h3{
+    font-family: 'Grenze Gotisch', 
+    cursive;
+}
+.perfil img{
+    width: 300px;
+    height: 400px;
+    float: left;
+}
+.perfil p{
+    padding-top: 25px;
+    padding-left: 20px;
+    font-size: 25px;
 }
