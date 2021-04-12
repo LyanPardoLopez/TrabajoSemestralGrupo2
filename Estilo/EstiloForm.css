@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar-brand{
+    color: plum;
+    font-family: Impact;
+}
+.form-register{
+    width: auto;
+    background-color:rgb(20, 20, 20);
+    padding: 20px;
+    margin: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    color:rgb(255, 255, 255);
+    font-family: Impact;
+    border: 2px solid rgb(95, 95, 95);
+}
+.form-group{
+    width: 100%;
+    padding: 10px;
+    background: rgb(75, 70, 70);
+    font-family:'Franklin Gothic Medium';
+    border: 1pt solid white;
+    font-size: 5mm;
+    color: black;
+    border-radius: 5px;
+    margin-bottom:20px ;
+}
+.form-control-file{
+    font-size: 3mm;
+
+}
+.text{
+    font-size:15px;
+    font-family: Arial;
+    color: gold;
+    padding: 10px;
+    border:solid 2px;
+    margin-bottom: 5mm;
+  
+
+}
+.btn.btn-primary.me-md-2{
+    background-color: plum;
+    border: 0px;
+    color: rgb(20, 20, 20);
+    
+}
+.textoPresentacion{
+    font-size: 10pxs;
+}
+.mapa{
+
+}
+
+
+.footer{
+    background-color:black;
+    width: 100%;
+    bottom: 0mm;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: sticky;
+    color: floralwhite;
+}
+.footer-text{
+    color: lightblue;
+}
