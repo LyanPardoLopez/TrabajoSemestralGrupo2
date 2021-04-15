@@ -1,27 +1,177 @@
-body{
-    background-color: black;
+body {
+  
+   
 }
-h2{
+.navbar-brand{
+    color:plum;
+    font-family: Impact;
+}
+
+h2 {
     text-align: center;
 }
-section{
-    height: 700px;
-}
-.tatuadores{
 
+section {
+    height: 100%;
 }
-.tatuadores img{
+.nav-link{
+   color: plum;
+}
+.contenedorEquipo img {
     width: 300px;
     height: 400px;
 }
-.contenedorImg1{
+.card{
+    height: 650px;
+    padding: 10px;
+    color: white;
+}
+.card-body{
+    font-size: 15px;
+}
+.card-title{
+    color: rgb(8, 8, 8);
+}
+
+
+.contenedorImg1 {
     width: 90%;
     height: 100%;
     align-items: center;
     align-content: center;
+   
 }
-.contenedorImg1 img{
+
+.contenedorImg1 img {
     width: 250px;
     height: 210px;
+    border: solid black;
+
+    
+}
+
+.contenedorImg1 td {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.contenedor p,
+iframe {
+    padding-top: 30px;
+}
+
+.contenedor p {
+    font-size: 25px;
+}
+
+.separador {
+    width: 100%;
+    background-color: rgb(8, 8, 8);
+    color:white;
+    font-family: Impact;
+    border: solid violet;
+    padding:10px;
+    padding-bottom: 10px;
+    
+}
+
+.cotizacion {
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+}
+
+p,
+h5,
+a,
+h3 {
+    font-family: 'Grenze Gotisch', cursive;
+}
+.titulo-tattoo{
+    font-family: Impact;
+    font-size: 30px;
+    color: white;
+    padding-left: 10px;
+}
+
+.textoPresentacion {
+    height: 100%;
+    width: 60%;
+}
+
+.perfil img {
+    width: 300px;
+    height: 400px;
+    float: left;
+}
+
+.perfil p {
+    padding-top: 10px;
+    padding-left: 35%;
+    font-size: 25px;
+
+}
+
+.textoPerfil {
+    padding-left: 30px;
+    width: 70%;
+    height: 30%;
+    color:white;
+}
+
+.butonCotizar {
+    text-decoration: none;
     padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 6px;
+    float: left;
+}
+
+.disponibles {
+    padding-left: 30%;
+    width: 80%;
+    height: 30%;
+    padding-bottom: 10cm;
+}
+
+.disponibles p {
+    text-align: center;
+}
+
+.disponibles img {
+    height: 300px;
+    width: 100%;
+}
+.footer{
+    background-color:black;
+    width: 100%;
+    padding-bottom: 3cm;
+    position: static;
+    color: white;
+    
+
+}
+.somos{
+    background-color: plum;   
+}
+.mapa{
+    width: 100%;
+    height: 10cm;
+}
+.texto{
+    font-size: 30px;
+
+}
+.fondo{
+    background-color: plum;
+}
+.card-img-top{
+    align-self: center;
+    padding-left: 10px;
+
+}
+.card-text{
+    color:rgb(255, 255, 255);
 }
