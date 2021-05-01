@@ -24,16 +24,24 @@
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Correo electronico</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="email" class="form-control" id="LoginEmail" placeholder="name@example.com">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorEmail">
+            <label class="form-label" id="textoErrorEmail"></label>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Contraseña </label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="password">
+            <input type="password" class="form-control" id="LoginPass" placeholder="password">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorContraseña">
+            <label class="form-label" id="textoErrorContraseña"></label>
         </div>
 
         <div class="btn-register">
-            <button class="btn btn-primary me-md-2" type="button">Iniciar</button><br>
+            <button class="btn btn-primary me-md-2" type="button" id="BtnLogin">Iniciar</button><br>
             <p>¿aun no te has unido a nuestro estudio?</p><a href="Register.html">crete una cuenta aquí</a>
         </div>
     </form>
@@ -54,9 +62,45 @@
 
 
 
-    <script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>
+    <!--<script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>-->
+    <script src="js/query-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //apagando etiquetas
+            $("#msgErrorEmail").hide();
+            $("#msgErrorContraseña").hide();
+
+            //validacion de campos 
+            $("BtnLogin").click(function() {
+                var retorno = true;
+                var Email = $("LoginEmail").val();
+                var Pass = $("LoginPass").val();
+
+                if (Email.trim() <= 0) {
+                    $("#msgErrorEmail").show();
+                    $("#textoErrorEmail").text("El campo es obligatorio para iniciar session")
+                    retorno = false;
+                } else {
+                    $("#msgErrorEmail").hide();
+                }
+                if (Pass.trim() <= 0) {
+                    $("#msgErrorContraseña").show();
+                    $("#textoErrorContraseña").text("El campo contraseña es obligatorio para iniciar session");
+                    retorno = false;
+                } else {
+                    $("#msgErrorContraseña").hide();
+                }
+
+                return retorno;
+
+            });
+
+        });
+    </script>
 </body>
 
 </html>

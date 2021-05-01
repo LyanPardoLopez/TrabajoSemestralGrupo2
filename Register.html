@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Cotización</title>
+    <title>Registrate </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="estilo/EstiloForm.css">
     <script src='main.js'></script>
@@ -22,32 +22,52 @@
     <form class="form-register">
         <h3>Registrate en nuestro local!</h3>
         <div class="form-group">
-            <label for="exampleFormControlInput1"> Nombres </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Sus dos nombres">
+            <label for="exampleFormControlInput1"> Nombre </label>
+            <input type="text" class="form-control" id="RegisNombre" placeholder="Nombre">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorNombre">
+            <label class="form-label" id="textoErrorNombre"></label>
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlInput1">apellidos </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Sus dos apellidos">
+            <label for="exampleFormControlInput1">apellido </label>
+            <input type="text" class="form-control" id="RegisApellido" placeholder="Apellido">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorApellido">
+            <label class="form-label" id="textoErrorApellido"></label>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="email" class="form-control" id="RegisEmail" placeholder="name@example.com">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorEmail">
+            <label class="form-label" id="textoErrorEmail"></label>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Contraseña </label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="password">
+            <input type="password" class="form-control" id="RegisContraseña" placeholder="password">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorContraseña">
+            <label class="form-label" id="textoErrorContraseña"></label>
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Repita la contraseña </label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="password">
+            <input type="password" class="form-control" id="RegisConfirmar" placeholder="password">
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="msgErrorConfirmar">
+            <label class="form-label" id="textoErrorConfirmar"></label>
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary me-md-2" type="button">Registrarme</button>
+            <button class="btn btn-primary me-md-2" type="button" id="BtnRegister">Registrarme</button>
         </div>
     </form>
     <div class="container-flex">
@@ -63,12 +83,84 @@
         </footer>
     </div>
 
-
-
-
-    <script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>
+    <!--<script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>-->
+    <script src="js/query-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //apagado de etiquetas
+            $("#msgErrorNombre").hide();
+            $("#msgErrorApellido").hide();
+            $("#msgErrorEmail").hide();
+            $("#msgErrorContraseña").hide();
+            $("#msgErrorConfirmar").hide();
+
+            //validacion del formulario
+            $("#BtnRegister").click(function() {
+                var retorno = true;
+                var nombre = $("#RegisNombre").val();
+                var apellido = $("#RegisApellido").val();
+                var email = $("#RegisEmail").val();
+                var contraseña = $("#RegisContraseña").val();
+                var confirmacion = $("#RegisConfirmar").val();
+
+                if (nombre.trim() <= 0) {
+                    $("#msgErrorNombre").show();
+                    $("#textoErrorNombre").text("El campo nombre es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#msgErrorNombre").hide();
+                }
+                if (apellido.trim() <= 0) {
+                    $("#msgErrorApellido").show();
+                    $("#textoErrorApellido").text("El campo apellido es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#msgErrorApellido").hide();
+                }
+                if (email.trim() <= 0) {
+                    $("#msgErrorEmail").show();
+                    $("#textoErrorEmail").text("El campo Email es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#textoErrorEmail").hide();
+                }
+                if (contraseña.trim() <= 0) {
+                    $("#msgErrorContraseña").show();
+                    $("#textoErrorContraseña").text("El campo de contraseña es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#msgErrorContraseña").hide();
+                }
+                if (contraseña2.trim() <= 0) {
+                    $("#msgErrorConfirmar").show();
+                    $("#textoErrorConfirmar").text("El campo de contraseña es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#msgErrorConfirmar").hide();
+                }
+
+                //validacion de contraseñas
+                var pass = $("#RegisContraseña").val();
+                var pass2 = $("#RegisConfirmar").val();
+
+                if (pass.value() != pass2.value()) {
+                    $("#msgErrorConfirmar").show();
+                    $("#textoErrorContraseña").text("Las contraseñas no son iguales")
+                    $("#msgErrorContraseña").show();
+                    $("#textoErrorContraseña").text("Las contraseñas no son iguales")
+                } else {
+                    $("#msgErrorContraseña").hide();
+                    $("#msgErrorConfirmar").hide();
+                }
+                return retorno;
+            });
+        });
+    </script>
 </body>
 
 </html>
