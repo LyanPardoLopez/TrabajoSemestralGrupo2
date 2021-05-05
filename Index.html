@@ -32,6 +32,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="formulario.html" >Cotización</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html" >LogIn</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -184,21 +188,53 @@
                 </div>
                     <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26637.425695479407!2d-70.67040452513544!3d-33.43163281158444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9ad2de7f51680aa9!2sBellavista%20Tattoo%20Studio!5e0!3m2!1ses!2scl!4v1617573180902!5m2!1ses!2scl"
                     ></iframe>
+                   
                 </div> 
+               
 
         </section>
         <div class="container-flex">
         <footer class="footer"> 
             <ul>
-                <li>Términos y Condiciones</li>
-                <li>Contacto</li>
-                <li>Soporte</li>
+                
+                <li>
+                    <span class="api">¡Mira, el clima </span>
+                    <span class="api" id="estadoClima"></span>
+                </li>
+                <li>
+                    <span class="api"> La temperatura actual para tu tatto es:  </span> 
+                    <span class="api" id="tempEratura"></span>
+                </li>  
+                <li>
+                    <span class="api"> Que no se te pase tu hora!: </span>
+                    <span class="api" id="horaUpdate"></span>
+                </li>
+                <li class="txtFooter">Términos y Condiciones</li>
+                <li class="txtFooter">Contacto</li>
+                <li class="txtFooter">Soporte</li>
             </ul>
         </footer>
     </div>
-    <script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>
+    <!--<script src="code.jquery.com/jquery-3.6.0.slim.min.js " integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin=" anonymous "></script>!-->
+    <script src="js/query-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    
+
+    <!--sript de nuestra API-->
+    <script>
+        $(document).ready(function(){
+            $.get("https://api.gael.cloud/general/public/clima/SCQN",
+            function(data){
+                console.log(JSON.stringify(data));
+                $("#estadoClima").text(data.Estado+" amerita un Tattoo!");
+                $("#tempEratura").text(data.Temp+"°C"); 
+                $("#horaUpdate").text(data.HoraUpdate);
+            })  
+           
+
+        });
+    </script>
 
 </body>
 
