@@ -45,8 +45,9 @@
             <p>¿aun no te has unido a nuestro estudio?</p><a href="Register.html">crete una cuenta aquí</a>
         </div>
     </form>
-    <br><br><br><br>
-    <div class="container-flex">
+   
+
+    <div class="container-flex" style="padding-top:7cm;">
         <footer class="footer">
             <div class="footer-text">
                 <ul>
@@ -75,19 +76,19 @@
             $("#msgErrorContraseña").hide();
 
             //validacion de campos 
-            $("BtnLogin").click(function() {
+            $("#BtnLogin").click(function() {
                 var retorno = true;
-                var Email = $("LoginEmail").val();
-                var Pass = $("LoginPass").val();
+                var email = $("#LoginEmail").val();
+                var pass = $("#LoginPass").val();
 
-                if (Email.trim() <= 0) {
+                if (email.trim() <= 0) {
                     $("#msgErrorEmail").show();
                     $("#textoErrorEmail").text("El campo es obligatorio para iniciar session")
                     retorno = false;
                 } else {
                     $("#msgErrorEmail").hide();
                 }
-                if (Pass.trim() <= 0) {
+                if (pass.trim() <= 0) {
                     $("#msgErrorContraseña").show();
                     $("#textoErrorContraseña").text("El campo contraseña es obligatorio para iniciar session");
                     retorno = false;
