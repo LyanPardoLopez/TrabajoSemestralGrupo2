@@ -147,11 +147,15 @@ h3 {
 .footer{
     background-color:black;
     width: 100%;
-    padding-bottom: 3cm;
+    padding-bottom: 1cm;
     position: static;
     color: white;
+    padding-top: 1cm;
     
 
+}
+.txtFooter{
+    font-family: inherit;
 }
 .somos{
     background-color: plum;   
@@ -174,4 +178,18 @@ h3 {
 }
 .card-text{
     color:rgb(255, 255, 255);
+}
+.api{
+    font-family:Verdana,;
+    font-size: 5mm;
+    color:rgb(27, 96, 153);
+
+
+
+
+}
+/*login*/
+
+.btn-register {
+    
 }
