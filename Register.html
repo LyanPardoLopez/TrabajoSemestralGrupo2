@@ -50,21 +50,20 @@
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Contraseña </label>
-            <input type="password" class="form-control" id="RegisContraseña" placeholder="password">
+            <input type="password" class="form-control" id="RegisContra" placeholder="password">
         </div>
 
-        <div class="alert alert-danger" role="alert" id="msgErrorContraseña">
-            <label class="form-label" id="textoErrorContraseña"></label>
-        </div>
+       
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Repita la contraseña </label>
             <input type="password" class="form-control" id="RegisConfirmar" placeholder="password">
+        </div> 
+        
+        <div class="alert alert-danger" role="alert" id="msgErrorContra">
+            <label class="form-label" id="textoErrorContra"></label>
         </div>
 
-        <div class="alert alert-danger" role="alert" id="msgErrorConfirmar">
-            <label class="form-label" id="textoErrorConfirmar"></label>
-        </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn btn-primary me-md-2" type="button" id="BtnRegister">Registrarme</button>
@@ -96,8 +95,7 @@
             $("#msgErrorNombre").hide();
             $("#msgErrorApellido").hide();
             $("#msgErrorEmail").hide();
-            $("#msgErrorContraseña").hide();
-            $("#msgErrorConfirmar").hide();
+            $("#msgErrorContra").hide();
 
             //validacion del formulario
             $("#BtnRegister").click(function() {
@@ -105,60 +103,86 @@
                 var nombre = $("#RegisNombre").val();
                 var apellido = $("#RegisApellido").val();
                 var email = $("#RegisEmail").val();
-                var contraseña = $("#RegisContraseña").val();
-                var confirmacion = $("#RegisConfirmar").val();
+                var contra = $("#RegisContra").val();
+                var confirma = $("#RegisConfirmar").val();
 
+                //que nombre esté lleno
                 if (nombre.trim() <= 0) {
                     $("#msgErrorNombre").show();
-                    $("#textoErrorNombre").text("El campo nombre es obligatorio")
+                    $("#textoErrorNombre").text("Hey! El campo nombre es obligatorio")
                     retorno = false;
                 } else {
                     $("#msgErrorNombre").hide();
                 }
+                //que el nombre no sea un numero
+               
+                    var valoresAceptados = /^[0-9]+$/;
+                    if (nombre.match(valoresAceptados)){
+                        $("#msgErrorNombre").show();
+                        $("#textoErrorNombre").text("wow! ese es tu nombre?")
+                        retorno = false;
+                    } else {
+                        $("#msgErrorNombre").hide();
+                    }
+
+
+
+            
+
+
+
                 if (apellido.trim() <= 0) {
                     $("#msgErrorApellido").show();
-                    $("#textoErrorApellido").text("El campo apellido es obligatorio")
+                    $("#textoErrorApellido").text("Hey! El campo apellido es obligatorio")
                     retorno = false;
                 } else {
                     $("#msgErrorApellido").hide();
                 }
+
+                var valoresAceptados = /^[0-9]+$/;
+                    if (apellido.match(valoresAceptados)){
+                        $("#msgErrorApellido").show();
+                        $("#textoErrorApellido").text("wow! ese es tu apellido?")
+                        retorno = false;
+                    } else {
+                        $("#msgErrorApellido").hide();
+                    }
+
+
                 if (email.trim() <= 0) {
                     $("#msgErrorEmail").show();
-                    $("#textoErrorEmail").text("El campo Email es obligatorio")
+                    $("#textoErrorEmail").text("Hey! El campo Email es obligatorio")
                     retorno = false;
                 } else {
-                    $("#textoErrorEmail").hide();
+                    $("#msgErrorEmail").hide();
                 }
-                if (contraseña.trim() <= 0) {
-                    $("#msgErrorContraseña").show();
-                    $("#textoErrorContraseña").text("El campo de contraseña es obligatorio")
+                if (contra.trim() <= 0) {
+                    $("#msgErrorContra").show();
+                    $("#textoErrorContra").text("Recuerda, los campos de contraseña son obligatorios")
                     retorno = false;
                 } else {
-                    $("#msgErrorContraseña").hide();
+                    $("#msgErrorContra").hide();
                 }
-                if (contraseña2.trim() <= 0) {
-                    $("#msgErrorConfirmar").show();
-                    $("#textoErrorConfirmar").text("El campo de contraseña es obligatorio")
+                if (Object.is(contra, confirma)){
+                      $("msgErrorContra").hide();
+                }else{
+                    $("#msgErrorContra").show();
+                    $("#textoErrorContra").text("Ups! Las contraseñas no son iguales")
                     retorno = false;
-                } else {
-                    $("#msgErrorConfirmar").hide();
                 }
+                  
+                
+                    
+
+
 
                 //validacion de contraseñas
-                var pass = $("#RegisContraseña").val();
-                var pass2 = $("#RegisConfirmar").val();
-
-                if (pass.value() != pass2.value()) {
-                    $("#msgErrorConfirmar").show();
-                    $("#textoErrorContraseña").text("Las contraseñas no son iguales")
-                    $("#msgErrorContraseña").show();
-                    $("#textoErrorContraseña").text("Las contraseñas no son iguales")
-                } else {
-                    $("#msgErrorContraseña").hide();
-                    $("#msgErrorConfirmar").hide();
-                }
+                
+              
+            
                 return retorno;
             });
+            
         });
     </script>
 </body>
