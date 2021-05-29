@@ -1,0 +1,160 @@
+{% extends 'app/base.html' %}{% load static %}
+{% block contenido %}
+ <!-- imagenes-->
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'core/img/carrusel/inicio 7.jpg' %}" class="d-block w-100" alt="ERROR">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>¿Deseas tatuarte?</h5>
+                <p>Contacta nuestro equipo! diversos diseños y estilos te esperan </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'core/img/carrusel/inicio 4.png' %}" class="d-block w-100" alt="ERROR">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Seguridad al 100%</h5>
+                <p>Contamos con certificaciones y todas las medidas de higiene</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'core/img/carrusel/inicio 9.jpg' %}" class="d-block w-100" alt="ERROR">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>No lo pienses más</h5>
+                <p>Síguenos en todas nuestras redes </p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- seccion 1-->
+<section id="equipo" class="fondo">
+    <div class="contenedorEquipo" >
+        <h2 class="separador">Equipo de trabajo</h2>
+        
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col">
+                <div class="card" style="background-color:rgb(34, 33, 34);"> 
+                    {%for datos in tatuadores%}
+                    <img src="{{datos.imagen.url}}" class="card-img-top" alt="...">
+                    {% endfor %}
+                    <div class="card-body" >
+                       
+                        <h5 class="card-title">kat Von D</h5>
+                        <p class="card-text">20 años de experiencia</p>
+                        <p class="card-text">Contacto: +56923456815</p>
+                        <p class="card-text">Email: KatPigTattoo@gmail.com</p>
+                        <button type="button" class="btn btn-dark"  onclick="location.href='{%url 'perfilKV' %}'">Cotizar con Kat Von</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color: rgb(51, 50, 51);" >
+                     <img src="{% static 'core/img/equipo/tatuador2.jpg' %}" class="card-img-top" alt="ERROR">
+                    <div class="card-body">
+                        <h5 class="card-title">Maria Leon</h5>
+                        <p class="card-text">19 años de experiencia</p>
+                        <p class="card-text">Contacto: +56912345677</p>
+                        <p class="card-text">Email: MariaPigTattoo@gmail.com</p>
+                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilML'%}'">Cotizar con Maria</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color: rgb(68, 67, 67);">
+                    <img src="{% static 'core/img/equipo/tatuador3.jpg' %}" class="card-img-top" alt="ERROR">
+                    <div class="card-body">
+                        <h5 class="card-title">Mauricio Partida</h5>
+                        <p class="card-text">21 años de experiencia</p>
+                        <p class="card-text">Contacto: +56976543295</p>
+                        <p class="card-text">Email: MauricioPigTattoo@gmail.com</p>
+                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilMP'%}'">Cotizar con Mauricio</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color:rgb(99, 97, 99) ;">
+                    <img src="{% static 'core/img/equipo/tatuador4.jpg' %}" class="card-img-top" alt="ERROR">
+                    <div class="card-body">
+                        <h5 class="card-title">Mike Rubendall</h5>
+                        <p class="card-text">25 años de experiencia</p>
+                        <p class="card-text">Contacto: +56975386924</p>
+                        <p class="card-text">Email: MikePigTattoo@gmail.com</p>
+                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilMR'%}'">Cotizar con Mike  </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<!-- seccion 2-->
+<section id="trabajos" class="fondo">
+    <div>
+        <h2 class="separador">Trabajos realizados</h2>
+        <table class="contenedorImg1" align="center" >
+            <tr>
+                <td>
+                    <h3>Realistas</h3>
+                </td>
+                <td>
+                    <h3>Botánicos</h3>
+                </td>
+                <td>
+                    <h3>Tradicional</h3>
+                </td>
+                <td>
+                    <h3>Tradicional Japonés</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="{% static 'core/img/trabajos/realismo1.jpg' %}" class="img-thumbnail" alt="ERROR" ></td>
+                <td><img src="{% static 'core/img/trabajos/botanico1.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicional1.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicionalJapones1.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+            </tr>
+            <tr>
+                <td><img src="{% static 'core/img/trabajos/realismo2.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/botanico2.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicional2.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicionalJapones2.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+            </tr>
+            <tr>
+                <td><img src="{% static 'core/img/trabajos/realismo3.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/botanico3.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicional3.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+                <td><img src="{% static 'core/img/trabajos/tradicionalJapones3.jpg' %}" class="img-thumbnail" alt="ERROR"></td>
+            </tr>
+        </table>
+    </div>
+</section>
+<!-- seccion 3-->
+    <section id="quienesSomos">
+            <h2 class="separador">¿Quiénes somos?</h2>
+            <div class="container-fluid" style="background-color: plum;"  >
+                <div class="texto">
+                    <p>Somos un estudio de tatuajes de alta gama, comprometidos con el arte del tatuaje y a siempre dar la mejor experiencia 
+                    para el cliente, nuestros tatuajes buscan satisfacer en su totalidad las expectativas del cliente, sea lo que te hayas 
+                    imaginado, nuestros tatuadores te ayudaran a diseñar tu idea o en la búsqueda del diseño que quede perfecto para ti. 
+                    Déjate llevar por nuestros tatuadores que desean crear para ti una pieza única y que lleves con mucho orgullo.</p>
+            </div>
+                <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26637.425695479407!2d-70.67040452513544!3d-33.43163281158444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9ad2de7f51680aa9!2sBellavista%20Tattoo%20Studio!5e0!3m2!1ses!2scl!4v1617573180902!5m2!1ses!2scl"
+                ></iframe>
+               
+            </div> 
+           
+
+    </section>
+{% endblock %}

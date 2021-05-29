@@ -5,6 +5,10 @@ class Tatuador(models.Model):
     idTatuador = models.IntegerField(primary_key=True,verbose_name='ID del tatuador')
     nombreTatuador = models.CharField(max_length=50,verbose_name='Nombre del tatuador')
     estiloTatuador = models.CharField(max_length=50,verbose_name='Estilo del tauador')
+    edadTatuador =models.IntegerField(null=True)
+    numTatuador=models.IntegerField(null=True)
+    emailTatuador=models.CharField(max_length=20,verbose_name='Email del tatuador', null=True)
+    imagen = models.ImageField(upload_to='catalogo_tatuador', null=True)
     def __str__(self):
         return self.nombreTatuador
 
