@@ -50,21 +50,37 @@
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Contraseña </label>
+<<<<<<< HEAD
             <input type="password" class="form-control" id="RegisContraseña" placeholder="password">
         </div>
 
         <div class="alert alert-danger" role="alert" id="msgErrorContraseña">
             <label class="form-label" id="textoErrorContraseña"></label>
         </div>
+=======
+            <input type="password" class="form-control" id="RegisContra" placeholder="password">
+        </div>
+
+       
+>>>>>>> 73fa6171ee9822a909d351f3190505fbfbd42b07
 
         <div class="form-group">
             <label for="exampleFormControlInput1"> Repita la contraseña </label>
             <input type="password" class="form-control" id="RegisConfirmar" placeholder="password">
+<<<<<<< HEAD
         </div>
 
         <div class="alert alert-danger" role="alert" id="msgErrorConfirmar">
             <label class="form-label" id="textoErrorConfirmar"></label>
         </div>
+=======
+        </div> 
+        
+        <div class="alert alert-danger" role="alert" id="msgErrorContra">
+            <label class="form-label" id="textoErrorContra"></label>
+        </div>
+
+>>>>>>> 73fa6171ee9822a909d351f3190505fbfbd42b07
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn btn-primary me-md-2" type="button" id="BtnRegister">Registrarme</button>
@@ -96,8 +112,12 @@
             $("#msgErrorNombre").hide();
             $("#msgErrorApellido").hide();
             $("#msgErrorEmail").hide();
+<<<<<<< HEAD
             $("#msgErrorContraseña").hide();
             $("#msgErrorConfirmar").hide();
+=======
+            $("#msgErrorContra").hide();
+>>>>>>> 73fa6171ee9822a909d351f3190505fbfbd42b07
 
             //validacion del formulario
             $("#BtnRegister").click(function() {
@@ -105,6 +125,7 @@
                 var nombre = $("#RegisNombre").val();
                 var apellido = $("#RegisApellido").val();
                 var email = $("#RegisEmail").val();
+<<<<<<< HEAD
                 var contraseña = $("#RegisContraseña").val();
                 var confirmacion = $("#RegisConfirmar").val();
 
@@ -118,10 +139,32 @@
                 if (apellido.trim() <= 0) {
                     $("#msgErrorApellido").show();
                     $("#textoErrorApellido").text("El campo apellido es obligatorio")
+=======
+                var contra = $("#RegisContra").val();
+                var confirma = $("#RegisConfirmar").val();
+
+                //que nombre esté lleno
+                //que el nombre no sea un numero
+                    var valoresAceptados = /^[0-9]+$/;
+                if (nombre.match(valoresAceptados)|| nombre.trim()<=0){
+                        $("#msgErrorNombre").show();
+                        $("#textoErrorNombre").text("wow! ese es tu nombre? El nombre es obligatorio")
+                        retorno = false;
+                } else {
+                        $("#msgErrorNombre").hide();
+                    }
+
+
+
+                if (apellido.trim() <= 0) {
+                    $("#msgErrorApellido").show();
+                    $("#textoErrorApellido").text("Hey! El campo apellido es obligatorio")
+>>>>>>> 73fa6171ee9822a909d351f3190505fbfbd42b07
                     retorno = false;
                 } else {
                     $("#msgErrorApellido").hide();
                 }
+<<<<<<< HEAD
                 if (email.trim() <= 0) {
                     $("#msgErrorEmail").show();
                     $("#textoErrorEmail").text("El campo Email es obligatorio")
@@ -159,6 +202,53 @@
                 }
                 return retorno;
             });
+=======
+
+                var valoresAceptados = /^[0-9]+$/;
+                    if (apellido.match(valoresAceptados) || apellido.trim()<=0){
+                        $("#msgErrorApellido").show();
+                        $("#textoErrorApellido").text("wow! ese es tu apellido? El apellido es obligatorio")
+                        retorno = false;
+                    } else {
+                        $("#msgErrorApellido").hide();
+                    }
+
+
+                if (email.trim() <= 0) {
+                    $("#msgErrorEmail").show();
+                    $("#textoErrorEmail").text("Hey! El campo Email es obligatorio")
+                    retorno = false;
+                } else {
+                    $("#msgErrorEmail").hide();
+                }
+                if (contra.trim() <= 0) {
+                    $("#msgErrorContra").show();
+                    $("#textoErrorContra").text("Recuerda, los campos de contraseña son obligatorios")
+                    retorno = false;
+                } else {
+                    $("#msgErrorContra").hide();
+                }
+                if (Object.is(contra, confirma)){
+                      $("msgErrorContra").hide();
+                }else{
+                    $("#msgErrorContra").show();
+                    $("#textoErrorContra").text("Ups! Las contraseñas no son iguales")
+                    retorno = false;
+                }
+                  
+                
+                    
+
+
+
+                //validacion de contraseñas
+                
+              
+            
+                return retorno;
+            });
+            
+>>>>>>> 73fa6171ee9822a909d351f3190505fbfbd42b07
         });
     </script>
 </body>
