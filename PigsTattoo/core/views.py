@@ -46,7 +46,7 @@ def form_tatuador(request):
             data["mensaje"]="Guardado correctamente"
       
 
-    return render(request,'core/form_tatuador.html',data)
+    return render(request,'app/form_tatuador.html',data)
 
 def form_mod_tatuador(request,id):
     tatuador = Tatuador.objects.get(idTatuador=id)
@@ -89,7 +89,7 @@ def form_diseño(request):
             dataa["mensajee"]="Subido correctamente"
 
 
-    return render(request,'core/form_diseño.html',dataa)
+    return render(request,'app/form_diseño.html',dataa)
 
 def form_mod_diseño(request,id):
     diseño = Diseño.objects.get(idDiseño=id)
