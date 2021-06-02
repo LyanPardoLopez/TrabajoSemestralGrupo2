@@ -40,64 +40,33 @@
   </button>
 </div>
 <!-- seccion 1-->
+
 <section id="equipo" class="fondo">
     <div class="contenedorEquipo" >
         <h2 class="separador">Equipo de trabajo</h2>
-        
-        <div class="row row-cols-1 row-cols-md-4">
+        {%for datos in tatuadores%}
+        <div class="row adaption_card">
             <div class="col">
+                
                 <div class="card" style="background-color:rgb(34, 33, 34);"> 
-                    {%for datos in tatuadores%}
                     <img src="{{datos.imagen.url}}" class="card-img-top" alt="...">
-                    {% endfor %}
-                    <div class="card-body" >
-                       
-                        <h5 class="card-title">kat Von D</h5>
-                        <p class="card-text">20 años de experiencia</p>
-                        <p class="card-text">Contacto: +56923456815</p>
-                        <p class="card-text">Email: KatPigTattoo@gmail.com</p>
-                        <button type="button" class="btn btn-dark"  onclick="location.href='{%url 'perfilKV' %}'">Cotizar con Kat Von</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background-color: rgb(51, 50, 51);" >
-                     <img src="{% static 'core/img/equipo/tatuador2.jpg' %}" class="card-img-top" alt="ERROR">
-                    <div class="card-body">
-                        <h5 class="card-title">Maria Leon</h5>
-                        <p class="card-text">19 años de experiencia</p>
-                        <p class="card-text">Contacto: +56912345677</p>
-                        <p class="card-text">Email: MariaPigTattoo@gmail.com</p>
-                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilML'%}'">Cotizar con Maria</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background-color: rgb(68, 67, 67);">
-                    <img src="{% static 'core/img/equipo/tatuador3.jpg' %}" class="card-img-top" alt="ERROR">
-                    <div class="card-body">
-                        <h5 class="card-title">Mauricio Partida</h5>
-                        <p class="card-text">21 años de experiencia</p>
-                        <p class="card-text">Contacto: +56976543295</p>
-                        <p class="card-text">Email: MauricioPigTattoo@gmail.com</p>
-                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilMP'%}'">Cotizar con Mauricio</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="background-color:rgb(99, 97, 99) ;">
-                    <img src="{% static 'core/img/equipo/tatuador4.jpg' %}" class="card-img-top" alt="ERROR">
-                    <div class="card-body">
-                        <h5 class="card-title">Mike Rubendall</h5>
-                        <p class="card-text">25 años de experiencia</p>
-                        <p class="card-text">Contacto: +56975386924</p>
-                        <p class="card-text">Email: MikePigTattoo@gmail.com</p>
-                        <button type="button" class="btn btn-dark" onclick="location.href='{%url 'perfilMR'%}'">Cotizar con Mike  </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <div class="card-body" >
         
+                            <h5 class="card-title">{{datos.nombreTatuador}}</h5>
+                            <p class="card-text">Estilo: {{datos.estiloTatuador}}</p>
+                            <p class="card-text">{{datos.edadTatuador}} años de experiencia</p>
+                            <p class="card-text">Contacto: {{datos.numTatuador}}</p>
+                            <p class="card-text">Email: {{datos.emailTatuador}}</p>
+                             
+                            <button type="button" class="btn btn-dark"  onclick="location.href='{%url 'perfilKV' %}'">Cotizar con Kat Von</button>
+                        </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+       
     </div>
 </section>
 <!-- seccion 2-->

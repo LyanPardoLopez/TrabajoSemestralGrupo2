@@ -23,18 +23,19 @@
                 <td>Modificar</td>
                 <td>Eliminar</td>
             </tr>
-            {%for datoss in diseños %}
+            {%for datoss in disenos %}
             <tr>
-                <td>{{datoss.idDiseño}}</td>
-                <td>{{datoss.nombreDiseño}}</td>
+                <td>{{datoss.idDiseno}}</td>
+                <td>{{datoss.nombreDiseno}}</td>
                 <td>{{datoss.categoria}}</td>
                 <td>{{datoss.tatuador}}</td>
-                <td><a href="{% url 'form_mod_diseño' datoss.idDiseño %}">Modificar</a></td>
-                <td><a href="{% url 'form_del_diseño' datoss.idDiseño %}">Eliminar</a></td>
+                <td><img  src="{{datoss.imgdiseno.url}}"></td>
+                <td><a href="{% url 'form_mod_diseno' datoss.idDiseno %}">Modificar</a></td>
+                <td><a href="{% url 'form_del_diseno' datoss.idDiseno %}">Eliminar</a></td>
             </tr>
             {%endfor%}
-            </table>
-            <a href="{% url 'form_diseño' %}">Nuevo Diseño</a>
+        </table>
+        <a href="{% url 'form_diseno' %}">Nuevo Diseño</a>
     </div>
    
 

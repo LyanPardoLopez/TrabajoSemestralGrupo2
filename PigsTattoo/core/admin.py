@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Tatuador,Diseño
+from .models import Tatuador,Diseno
 # Register your models here.
 
 admin.site.register(Tatuador)
-admin.site.register(Diseño)
+admin.site.register(Diseno)

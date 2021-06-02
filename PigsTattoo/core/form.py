@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Tatuador,Diseño
+from .models import Tatuador,Diseno
 
 class TatuadorForm(ModelForm):
 
@@ -10,7 +10,7 @@ class TatuadorForm(ModelForm):
         fields = '__all__'
 
 
-class DiseñoForm(ModelForm):
+class DisenoForm(ModelForm):
     class Meta:
-        model = Diseño
+        model = Diseno
         fields='__all__'

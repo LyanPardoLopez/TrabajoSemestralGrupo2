@@ -1,12 +1,17 @@
 from django.http import request
 from django.shortcuts import render,redirect
-from .models import Tatuador,Diseño
-from .form import TatuadorForm,DiseñoForm
+from .models import Tatuador,Diseno
+from .form import TatuadorForm,DisenoForm
 
 
 # Create your views here.
 def index(request):
-    return render(request,'app/Index.html')
+    tatuadores = Tatuador.objects.all()
+    print(tatuadores)
+    datos = {
+        'tatuadores':tatuadores
+    }
+    return render(request,'app/Index.html',datos)
 def formulario(request):
     return render(request,'core/formulario.html')
 def Login(request):
@@ -59,7 +64,7 @@ def form_mod_tatuador(request,id):
         if formulario.is_valid:
             formulario.save()
             data['mensaje']="Modifacados correctamente"
-    return render(request,'core/form_tatuador.html',data)
+    return render(request,'app/form_tatuador.html',data)
 
 
 def form_del_tatuador(request,id):
@@ -70,42 +75,43 @@ def form_del_tatuador(request,id):
 #-----------
 
 def testt(request):
-    diseños = Diseño.objects.all()
+    disenos = Diseno.objects.all()
     datoss = {
-        'diseños':diseños
+        'disenos':disenos
     }
     return render(request,'core/testt.html',datoss)
 
 
-def form_diseño(request):
+def form_diseno(request):
     dataa={
-        'formm': DiseñoForm()
+        'formm': DisenoForm()
     }
     if request.method=='POST':
-        formularioo= DiseñoForm(request.POST)
-
+        formularioo = DisenoForm(request.POST or None,request.FILES or None)
         if formularioo.is_valid:
             formularioo.save()
             dataa["mensajee"]="Subido correctamente"
 
 
-    return render(request,'app/form_diseño.html',dataa)
+    return render(request,'app/form_diseno.html',dataa)
 
-def form_mod_diseño(request,id):
-    diseño = Diseño.objects.get(idDiseño=id)
+def form_mod_diseno(request,id):
+    diseno = Diseno.objects.get(idDiseno=id)
     dataa={
-        'formm':DiseñoForm(instance=diseño)
+        'formm':DisenoForm(instance=diseno)
     }
     if request.method == 'POST':
-        formularioo=DiseñoForm(dataa=request.POST,instance=diseño)
+        formularioo=DisenoForm(dataa=request.POST,instance=diseno)
 
         if formularioo.is_valid:
             formularioo.save()
             dataa["mensajee"]="modificado correctamente"
-    return render(request,'core/form_diseño.html',dataa)
+    return render(request,'app/form_diseno.html',dataa)
+    
+    
 
-def form_del_diseño(request,id):
-    diseño=Diseño.objects.get(idDiseño=id)
-    diseño.delete()
+def form_del_diseno(request,id):
+    diseno=Diseno.objects.get(idDiseno=id)
+    diseno.delete()
     return redirect(to="testt")
 

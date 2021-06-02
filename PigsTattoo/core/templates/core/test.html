@@ -31,7 +31,7 @@
             <td>{{datos.edadTatuador}}</td>
             <td>{{datos.numTatuador}}</td>
             <td>{{datos.emailTatuador}}</td>
-            <td>{{datos.imagen}}</td>
+            <td><img  src="{{datos.imagen.url}}"></td>
             <td><a href="{% url 'form_mod_tatuador' datos.idTatuador %}">Modificar</a></td>
             <td><a href="{% url 'form_del_tatuador' datos.idTatuador %}">Eliminar</a></td>
         </tr>
@@ -39,7 +39,7 @@
         </table>
 
         <a href="{%url 'form_tatuador' %}">Nuevo Tatuador</a>
-        <a href="{%url 'form_diseño' %}">Nuevo Diseño</a>
+        <a href="{%url 'form_diseno' %}">Nuevo Diseño</a>
     </div>
 
    

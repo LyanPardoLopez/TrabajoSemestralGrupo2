@@ -2,7 +2,7 @@ from django.urls import path
 from .views import index
 from .views import formulario,Login,Register
 from .views import test,form_tatuador,form_mod_tatuador,form_del_tatuador
-from .views import testt,form_diseño,form_del_diseño,form_mod_diseño
+from .views import testt,form_diseno,form_del_diseno,form_mod_diseno
 from .views import perfilKV,perfilML,perfilMP,perfilMR
 
 
@@ -21,11 +21,11 @@ urlpatterns =[
 
     path('testt',testt,name='testt'),
 
-    path('form_diseño',form_diseño,name='form_diseño'),
+    path('form_diseno',form_diseno,name='form_diseno'),
 
-    path('form_mod_diseño/<id>',form_mod_diseño,name='form_mod_diseño'),
+    path('form_mod_diseno/<id>',form_mod_diseno,name='form_mod_diseno'),
 
-    path('form_del_diseño/<id>',form_del_diseño,name='form_del_diseño'),
+    path('form_del_diseno/<id>',form_del_diseno,name='form_del_diseno'),
 
 
     path('formulario',formulario,name="formulario"),

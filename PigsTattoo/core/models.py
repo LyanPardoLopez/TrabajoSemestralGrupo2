@@ -12,11 +12,11 @@ class Tatuador(models.Model):
     def __str__(self):
         return self.nombreTatuador
 
-class Diseño(models.Model):
-    idDiseño = models.CharField(primary_key=True,max_length=7,verbose_name='ID del diseño')
-    nombreDiseño = models.CharField(max_length=20,verbose_name='Nombre del Diseño')
+class Diseno(models.Model):
+    idDiseno = models.CharField(primary_key=True,max_length=7,verbose_name='ID del diseño')
+    nombreDiseno = models.CharField(max_length=20,verbose_name='Nombre del Diseño')
     categoria = models.CharField(max_length=20,verbose_name='Categoria del diseño')
     tatuador = models.ForeignKey(Tatuador,on_delete=models.CASCADE)
-
+    imgdiseno = models.ImageField(upload_to='catalogo_diseno', null=True)
     def __str__(self):
-        return self.idDiseño
+        return self.idDiseno
