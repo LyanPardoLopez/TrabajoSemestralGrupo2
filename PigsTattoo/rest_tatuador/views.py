@@ -38,7 +38,7 @@ def lista_tatuadores(request):
 
 @csrf_exempt
 @api_view(['GET','PUT','DELETE'])
-#@permission_classes((IsAuthenticated,))
+@permission_classes((IsAuthenticated,))
 def detalle_tatuador(request,id):
     try:
         tatuador=Tatuador.objects.get(idTatuador=id)

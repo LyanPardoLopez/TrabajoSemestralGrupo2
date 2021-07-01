@@ -4,7 +4,7 @@ from .views import formulario,Login,Register
 from .views import test,form_tatuador,form_mod_tatuador,form_del_tatuador
 from .views import testt,form_diseno,form_del_diseno,form_mod_diseno
 from .views import perfilKV,perfilML,perfilMP,perfilMR
-from .views import apitest
+from .views import apitest,apitatuador
 
 
 
@@ -52,5 +52,6 @@ urlpatterns =[
 
     path('apitest',apitest,name='apitest'),
 
+    path('apitatuador',apitatuador,name='apitatuador'),
 
 ]

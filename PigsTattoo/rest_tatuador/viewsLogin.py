@@ -24,14 +24,13 @@ def login(request):
     try:
         user = User.objects.get(username=username)
     except User.DoesNotExist:
-        return Response("Usuario no existente")
-
+        return Response("Usuario no existente",status.HTTP_404_NOT_FOUND)
 #valida la pass del user
 
     pass_valida = check_password(password,user.password)
 
     if not pass_valida:
-        return Response("pass incorrecta")
+        return Response("pass incorrecta",status.HTTP_404_NOT_FOUND)
 
 #crear o recuperan el token dado al usuario
 

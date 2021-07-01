@@ -120,3 +120,6 @@ def form_del_diseno(request,id):
 def apitest(request):
     return render(request,'app/apitest.html')
 
+def apitatuador(request):
+    return render(request,'app/apitatuador.html')
+
