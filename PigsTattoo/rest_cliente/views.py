@@ -15,9 +15,20 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
+
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def lista_registro(request,format=None):
+    content = {
+        'status': 'request was permitted'
+    }
+    return Response(content)
+
 @csrf_exempt
 @api_view(['GET','POST'])
-#@permission_classes((IsAuthenticated,))
+@permission_classes((IsAuthenticated,))
 def lista_registro(request):
 
     if request.method == 'GET':
@@ -38,7 +49,7 @@ def lista_registro(request):
 
 @csrf_exempt
 @api_view(['GET','PUT','DELETE'])
-#@permission_classes((IsAuthenticated,))
+@permission_classes((IsAuthenticated,))
 def detalle_registro(request,id):
     try:
         registro=Register.objects.get(id=id)
