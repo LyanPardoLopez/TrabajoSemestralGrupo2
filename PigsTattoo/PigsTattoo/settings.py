@@ -37,8 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'core',
     'crispy_forms',
+=======
+    'rest_framework',
+    'core',
+    'crispy_forms',
+    'rest_tatuador',
+    'rest_cliente',
+    'rest_framework.authtoken',
+    
+>>>>>>> origin/patricio
 ]
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 MIDDLEWARE = [
@@ -50,6 +60,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+<<<<<<< HEAD
+=======
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+
+}
+>>>>>>> origin/patricio
 
 ROOT_URLCONF = 'PigsTattoo.urls'
 

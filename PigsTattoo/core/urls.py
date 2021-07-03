@@ -4,6 +4,10 @@ from .views import formulario,Login,Register
 from .views import test,form_tatuador,form_mod_tatuador,form_del_tatuador
 from .views import testt,form_diseno,form_del_diseno,form_mod_diseno
 from .views import perfilKV,perfilML,perfilMP,perfilMR
+<<<<<<< HEAD
+=======
+from .views import apitest,apitatuador
+>>>>>>> origin/patricio
 
 
 
@@ -19,6 +23,11 @@ urlpatterns =[
 
     path('form_del_tatuador/<id>',form_del_tatuador,name='form_del_tatuador'),
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/patricio
     path('testt',testt,name='testt'),
 
     path('form_diseno',form_diseno,name='form_diseno'),
@@ -28,6 +37,11 @@ urlpatterns =[
     path('form_del_diseno/<id>',form_del_diseno,name='form_del_diseno'),
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/patricio
     path('formulario',formulario,name="formulario"),
 
     path('Login',Login,name="Login"),
@@ -43,4 +57,13 @@ urlpatterns =[
     path('perfilMR',perfilMR,name="perfilMR"),
 
 
+<<<<<<< HEAD
+=======
+
+
+    path('apitest',apitest,name='apitest'),
+
+    path('apitatuador',apitatuador,name='apitatuador'),
+
+>>>>>>> origin/patricio
 ]

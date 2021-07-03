@@ -19,4 +19,16 @@ class Diseno(models.Model):
     tatuador = models.ForeignKey(Tatuador,on_delete=models.CASCADE)
     imgdiseno = models.ImageField(upload_to='catalogo_diseno', null=True)
     def __str__(self):
+<<<<<<< HEAD
         return self.idDiseno
+=======
+        return self.idDiseno
+        
+class Register(models.Model):
+    nombreuser = models.CharField(verbose_name='nombre del user', max_length=30)
+    apellidouser = models.CharField(verbose_name='apellido del user', max_length=30)
+    emailuser = models.CharField(verbose_name='email del user', max_length=30)
+    contrauser = models.CharField(verbose_name='contraseña del user',max_length=30)
+    def __str__(self):
+        return self.nombreuser
+>>>>>>> origin/patricio

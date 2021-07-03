@@ -20,6 +20,13 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('core.urls') ),
+<<<<<<< HEAD
+=======
+    path('api/',include('rest_cliente.urls')),
+    path('api/',include('rest_tatuador.urls'))
+
+        
+>>>>>>> origin/patricio
 ]
 if settings.DEBUG: 
 
