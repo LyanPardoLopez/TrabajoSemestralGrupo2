@@ -115,3 +115,11 @@ def form_del_diseno(request,id):
     diseno.delete()
     return redirect(to="testt")
 
+
+
+def apitest(request):
+    return render(request,'app/apitest.html')
+
+def apitatuador(request):
+    return render(request,'app/apitatuador.html')
+
